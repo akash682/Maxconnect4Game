@@ -1,0 +1,19 @@
+Explaination:
+
+The evaluation function is calculated by using the utility value as following function.
+The value of the utility is bigger the better for maxplayer(computer).
+The value of the utility is smaller the better for minplayer(user).
+
+
+If the node ends with maxplayer(computer) and has the minplayer(user) as a parent, utility value will be calculated as follows.
+---->utility = 2 * state.humanScore - state.computerScore
+
+If the node ends with minplayer(user) and has the maxplayer(computer) as a parent.
+---->utility = 2 * state.computerScore - state.humanScore
+
+In both case, maxplayer and minplayer will be reluctant to choose the node when humanScore gets bigger or computerScore gets smaller and vice versa.
+
+However, in the real code there is a condition statement to verify the player as computer and user.
+
+
+
