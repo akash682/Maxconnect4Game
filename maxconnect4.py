@@ -9,18 +9,21 @@ from MaxConnect4Game import *
 from Minimax import *
 import sys
 
-def oneMoveGame(currentGame, init_next, depth):
+def oneMoveGame(currentGame, fname, depth):
     # Is the board full already?
     if currentGame.pieceCount == 42:
         print 'BOARD FULL\n\nGame Over!\n'
         sys.exit(0)
 
     # Make a move (Minimax algorithm implemented)
-    aiPlay(currentGame, init_next, depth)
+    aiPlay(currentGame, 'computer-next', depth)
+
+
+    fname = fname;
 
     try:
         # open human.txt with write mode
-        currentGame.gameFile = open("computer.txt", 'w')
+        currentGame.gameFile = open(fname, 'w')
     except:
         sys.exit('Error opening output file, computer.txt')
 
